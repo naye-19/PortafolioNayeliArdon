@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  FLUJO 1: CONSULTA DE DEUDA
+  Método: MakeRequest / HandleRequest
+  Valida: NUMCELULAR y CODPRODUCTO son obligatorios
+  Respuesta esperada: Status=S, ErrorMessage=CONSULTA EXITOSA
+  Campos retornados: IDPAGO, NUMCELULAR, DESCRIPCION, MONTOTOTAL,
+                     CODPRODUCTO, CODSELECTOR, TIPOPRODUCTO, FORMAPAGO
+-->
+<clsTransaccion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="www.ccs.hn">
+  <TipoMensaje>T</TipoMensaje>
+  <Secuencial>1</Secuencial>
+  <Agencia>101</Agencia>
+  <Terminal>TERM03</Terminal>
+  <Cajero>7030</Cajero>
+  <Modo>ONLINE</Modo>
+  <TipoTran>CONSULTA</TipoTran>
+  <Fecha>2025-12-19 14:46:52</Fecha>
+  <NumTransaccion>5523</NumTransaccion>
+  <NumTranHost>0</NumTranHost>
+  <SecProcAsoc>0</SecProcAsoc>
+  <Status>P</Status>
+  <ErrorMessage>Pendiente de Transmitir</ErrorMessage>
+  <NumCampos>7</NumCampos>
+  <NumLineas>0</NumLineas>
+  <NumGrids>0</NumGrids>
+  <NumDesgloses>0</NumDesgloses>
+  <Campos>
+    <!-- Requerido: si está vacío retorna Error Required(NUMCELULAR) -->
+    <clsCampo Nombre="NUMCELULAR">
+      <Valor>99887766</Valor>
+      <Supervisor />
+      <Autorizacion />
+    </clsCampo>
+    <!-- Requerido: si está vacío retorna Error Required(CODPRODUCTO) -->
+    <clsCampo Nombre="CODPRODUCTO">
+      <Valor>TIGO_PREPAGO</Valor>
+      <Supervisor />
+      <Autorizacion />
+    </clsCampo>
+    <clsCampo Nombre="CODSELECTOR">
+      <Valor>SEL01</Valor>
+      <Supervisor />
+      <Autorizacion />
+    </clsCampo>
+    <clsCampo Nombre="TIPOPRODUCTO">
+      <Valor>RECARGA</Valor>
+      <Supervisor />
+      <Autorizacion />
+    </clsCampo>
+    <!-- MONEDA: 1=Lempiras, 2=Dólares -->
+    <clsCampo Nombre="MONEDA">
+      <Valor>1</Valor>
+      <Supervisor />
+      <Autorizacion />
+    </clsCampo>
+    <clsCampo Nombre="TERMSOFIA">
+      <Valor>T10131</Valor>
+      <Supervisor />
+      <Autorizacion />
+    </clsCampo>
+    <clsCampo Nombre="TNUDOCTRA">
+      <Valor>94785570</Valor>
+      <Supervisor />
+      <Autorizacion />
+    </clsCampo>
+  </Campos>
+  <Lineas />
+  <Grids />
+  <Desgloses />
+</clsTransaccion>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  FLUJO 3: REVERSIÓN
+  Método: MakeReverse / HandleReverse
+  Prerequisito: ejecutar TigoRecarga_Pago.xml primero (solo se revierte un pago procesado)
+  Proceso interno:
+    1. DecreaseBalance: rebaja el saldo en AS400 (MPAGOACT + MONTOACUM)
+    2. ReverseAudit: revierte el registro en AUDIT usando TNUDOCTRA
+  Respuesta esperada: Status=S, ErrorMessage=REVERSION EXITOSA
+-->
+<clsTransaccion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="www.ccs.hn">
+  <TipoMensaje>T</TipoMensaje>
+  <Secuencial>3</Secuencial>
+  <Agencia>101</Agencia>
+  <Terminal>TERM03</Terminal>
+  <Cajero>7030</Cajero>
+  <Modo>ONLINE</Modo>
+  <TipoTran>REVERSION</TipoTran>
+  <Fecha>2025-12-19 14:48:15</Fecha>
+  <NumTransaccion>5525</NumTransaccion>
+  <NumTranHost>0</NumTranHost>
+  <SecProcAsoc>0</SecProcAsoc>
+  <Status>P</Status>
+  <ErrorMessage>Pendiente de Transmitir</ErrorMessage>
+  <NumCampos>6</NumCampos>
+  <NumLineas>0</NumLineas>
+  <NumGrids>0</NumGrids>
+  <NumDesgloses>0</NumDesgloses>
+  <Campos>
+    <!-- Mismo IDPAGO del pago que se desea revertir -->
+    <clsCampo Nombre="IDPAGO">
+      <Valor>731462818</Valor>
+      <Supervisor />
+      <Autorizacion />
+    </clsCampo>
+    <!-- Usado en DecreaseBalance y ReverseAudit -->
+    <clsCampo Nombre="MONEDA">
+      <Valor>1</Valor>
+      <Supervisor />
+      <Autorizacion />
+    </clsCampo>
+    <!-- DecreaseBalance usa MPAGOACT + MONTOACUM para rebajar el saldo -->
+    <clsCampo Nombre="MPAGOACT">
+      <Valor>77.39</Valor>
+      <Supervisor />
+      <Autorizacion />
+    </clsCampo>
+    <clsCampo Nombre="MONTOACUM">
+      <Valor>500</Valor>
+      <Supervisor />
+      <Autorizacion />
+    </clsCampo>
+    <!-- Usado en ReverseAudit para identificar la transacción -->
+    <clsCampo Nombre="TNUDOCTRA">
+      <Valor>94785570</Valor>
+      <Supervisor />
+      <Autorizacion />
+    </clsCampo>
+    <clsCampo Nombre="NUMCELULAR">
+      <Valor>99887766</Valor>
+      <Supervisor />
+      <Autorizacion />
+    </clsCampo>
+  </Campos>
+  <Lineas />
+  <Grids />
+  <Desgloses />
+</clsTransaccion>

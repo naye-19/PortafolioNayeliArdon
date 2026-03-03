@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- REFERENCIA DE FORMATO: clsTransaccion del sistema SOFIA -->
+<!-- Usar esta estructura para todos los XMLs de prueba de TigoRecarga -->
+<clsTransaccion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="www.ccs.hn">
+  <TipoMensaje>T</TipoMensaje>
+  <Secuencial>19</Secuencial>
+  <Agencia>101</Agencia>
+  <Terminal>TERM03</Terminal>
+  <Cajero>7030</Cajero>
+  <Modo>ONLINE</Modo>
+  <TipoTran>CONSULTA</TipoTran>
+  <Fecha>2025-12-19 14:46:52</Fecha>
+  <NumTransaccion>5523</NumTransaccion>
+  <NumTranHost>0</NumTranHost>
+  <SecProcAsoc>0</SecProcAsoc>
+  <Status>P</Status>
+  <ErrorMessage>Pendiente de Transmitir</ErrorMessage>
+  <NumCampos>48</NumCampos>
+  <NumLineas>0</NumLineas>
+  <NumGrids>0</NumGrids>
+  <NumDesgloses>0</NumDesgloses>
+  <Campos>
+    <clsCampo Nombre="IDPAGO">
+      <Valor>731462818</Valor>
+      <Supervisor />
+      <Autorizacion />
+    </clsCampo>
+    <clsCampo Nombre="TNUDOCTRA">
+      <Valor>94785570</Valor>
+      <Supervisor />
+      <Autorizacion />
+    </clsCampo>
+    <clsCampo Nombre="TERMSOFIA">
+      <Valor>T10131</Valor>
+      <Supervisor />
+      <Autorizacion />
+    </clsCampo>
+    <clsCampo Nombre="MONEDA">
+      <Valor>1</Valor>
+      <Supervisor />
+      <Autorizacion />
+    </clsCampo>
+    <clsCampo Nombre="CLAVE">
+      <Valor>5042868</Valor>
+      <Supervisor />
+      <Autorizacion />
+    </clsCampo>
+    <clsCampo Nombre="MPAGOACT">
+      <Valor>77.39</Valor>
+      <Supervisor />
+      <Autorizacion />
+    </clsCampo>
+    <clsCampo Nombre="MONTOACUM">
+      <Valor>500</Valor>
+      <Supervisor />
+      <Autorizacion />
+    </clsCampo>
+    <clsCampo Nombre="MPAGOACT2">
+      <Valor>0</Valor>
+      <Supervisor />
+      <Autorizacion />
+    </clsCampo>
+    <clsCampo Nombre="TOTALPAGAR">
+      <Valor>577.39</Valor>
+      <Supervisor />
+      <Autorizacion />
+    </clsCampo>
+  </Campos>
+  <Lineas />
+  <Grids />
+  <Desgloses />
+</clsTransaccion>
