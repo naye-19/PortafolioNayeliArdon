@@ -133,6 +133,26 @@ namespace LAFISE.TransactionsRouter.Infrastructure.Providers.BLHN.TIGO
         {
             _logger.LogInformation("TigoStrategy => HandleSettingRequest(). Starting to handle setting response content.");
 
+            sofia.SetFields(
+                new Dictionary<string, object?> {
+                    { "NUMFACTURA", "TIGO" },
+                    {nameof(settingResponse.ServiceId),settingResponse.ServiceId },
+                    {nameof(settingResponse.ServiceName),settingResponse.ServiceName },
+                    {nameof(settingResponse.Description),settingResponse.Description},
+                    {nameof(settingResponse.BankId),settingResponse.BankId},
+                    {nameof(settingResponse.CategoryId),settingResponse.CategoryId},
+                    {nameof(settingResponse.ProviderId),settingResponse.ProviderId},
+                    {nameof(settingResponse.ProviderDescription),settingResponse.ProviderDescription},
+                    {nameof(settingResponse.PaymentType),settingResponse.PaymentType},
+                    {nameof(settingResponse.IsPartialPaymentAllowed),settingResponse.IsPartialPaymentAllowed},
+                    {nameof(settingResponse.HasPackage),settingResponse.HasPackage},
+                    {nameof(settingResponse.Subscribable),settingResponse.Subscribable}
+                }
+            );
+
+            sofia.SetStatus(Status.Success, "CONSULTA EXITOSA");
+
+            _logger.LogInformation("TigoStrategy => HandleSettingRequest(). Finished handle setting response content.");
         }
 
         #endregion
